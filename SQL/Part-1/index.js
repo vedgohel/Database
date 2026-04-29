@@ -150,19 +150,11 @@
 //     age INT
 // );
 
-
-
-
-
-
-
-
 //  Foreign Key
 
 // A Foreign Key is a column that links one table to another table.
 
 // It refers to Primary Key of another table
-
 
 
 // CREATE TABLE course (
@@ -175,9 +167,6 @@
 //     course_id INT,
 //     FOREIGN KEY (course_id) REFERENCES course(course_id)
 // );
-
-
-
 
 
 
