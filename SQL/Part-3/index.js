@@ -245,3 +245,73 @@
 // BETWEEN
 // LIKE
 
+
+
+
+
+
+
+
+
+
+// LIMIT Clause in SQL
+
+// The LIMIT clause is used to restrict the number of rows returned by a query.
+
+//  Very useful when:
+
+// You only need top results
+// You want pagination (like Instagram feed)
+
+//  Basic Syntax
+// SELECT column_name
+// FROM table_name
+// LIMIT number;
+
+
+//  Example with your users table
+//  1. Get first 2 users
+// SELECT * FROM users
+// LIMIT 2;
+
+//  Returns only 2 rows
+
+//  2. Get only usernames (first 3)
+// SELECT username
+// FROM users
+// LIMIT 3;
+//  LIMIT with ORDER BY (Very Important )
+
+//  Used to get top users
+
+//  Top 2 users with highest followers
+// SELECT username, followers
+// FROM users
+// ORDER BY followers DESC
+// LIMIT 2;
+
+
+//  Pagination (Advanced but Important)
+// SELECT * FROM users
+// LIMIT 2 OFFSET 2;
+
+//  Skip first 2 rows, then show next 2
+
+// Alternate Syntax (MySQL)
+// SELECT * FROM users
+// LIMIT 2, 2;
+
+// (skip 2, show 2)
+
+//  Key Points
+// LIMIT controls how many rows to display
+// Works best with ORDER BY
+// Used in real apps (feeds, APIs, pagination)
+//  Real-life Example (Instagram Style)
+
+//  Show latest 5 users:
+
+// SELECT username
+// FROM users
+// ORDER BY created_at DESC
+// LIMIT 5;
