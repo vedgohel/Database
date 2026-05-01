@@ -50,3 +50,45 @@
 // WHERE followers > 1000;
 
 
+// Basic Query
+// SELECT username 
+// FROM users
+// WHERE condition;
+
+
+
+// Examples
+// 1. Users with more than 1000 followers
+// SELECT username 
+// FROM users
+// WHERE followers > 1000;
+
+// Output will be only usernames like:
+
+// ved_gohel
+// jane_smith
+// rahul_tech
+
+
+// 2. Specific user
+// SELECT username 
+// FROM users
+// WHERE username = 'ved_gohel';
+
+
+// 3. Users from a pattern (starts with 'j')
+// SELECT username 
+// FROM users
+// WHERE username LIKE 'j%';
+
+
+// 4. Multiple conditions
+// SELECT username 
+// FROM users
+// WHERE followers > 1000 AND following < 500;
+
+
+//  Key Idea
+
+// SELECT username → only prints names
+// WHERE → filters which users to show
