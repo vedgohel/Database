@@ -315,3 +315,176 @@
 // FROM users
 // ORDER BY created_at DESC
 // LIMIT 5;
+
+
+
+
+// ORDER BY Clause in SQL
+
+// The ORDER BY clause is used to sort the result of a query — either in ascending or descending order.
+
+//  Basic Syntax
+// SELECT column_name
+// FROM table_name
+// ORDER BY column_name [ASC | DESC];
+// ASC → Ascending (default)
+// DESC → Descending
+
+
+//  Examples with your users table
+
+
+// 1. Sort by followers (ascending)
+// SELECT username, followers
+// FROM users
+// ORDER BY followers ASC;
+
+//  Lowest followers → highest
+
+// 2. Sort by followers (descending)
+// SELECT username, followers
+// FROM users
+// ORDER BY followers DESC;
+
+//  Highest followers → lowest (very common )
+
+// 3. Sort by username (alphabetically)
+// SELECT username
+// FROM users
+// ORDER BY username ASC;
+
+
+// 4. Multiple column sorting
+
+
+// SELECT username, followers, following
+// FROM users
+// ORDER BY followers DESC, following ASC;
+
+//  First sort by followers, then by following
+
+//  ORDER BY with LIMIT (Most Important )
+// SELECT username, followers
+// FROM users
+// ORDER BY followers DESC
+// LIMIT 3;
+
+// Top 3 users with highest followers
+
+// ORDER BY with WHERE
+// SELECT username, followers
+// FROM users
+// WHERE followers > 1000
+// ORDER BY followers DESC;
+
+
+//  Key Points
+// ORDER BY = sorting results
+// Default is ASC
+// Use DESC for top/highest values
+// Works great with LIMIT
+// Real-life Example (Instagram Style)
+
+//Show latest users:
+
+// SELECT username
+// FROM users
+// ORDER BY created_at DESC
+// LIMIT 5;
+
+
+
+
+
+
+
+
+// Aggregate Functions in SQL
+
+// Aggregate functions are used to perform calculations on multiple rows and return a single result.
+
+// Mostly used with GROUP BY and WHERE
+
+//  Main Aggregate Functions
+
+//  1. COUNT() → Count rows
+// SELECT COUNT(*) 
+// FROM users;
+
+// Total number of users
+
+//  Count with condition
+// SELECT COUNT(*) 
+// FROM users
+// WHERE followers > 1000;
+
+//  2. SUM() → Total sum
+// SELECT SUM(followers) 
+// FROM users;
+
+//  Total followers of all users
+
+//  3. AVG() → Average value
+// SELECT AVG(followers) 
+// FROM users;
+
+//  Average followers
+
+// 4. MAX() → Maximum value
+// SELECT MAX(followers) 
+// FROM users;
+
+//  User with highest followers (value only)
+
+//  5. MIN() → Minimum value
+// SELECT MIN(followers) 
+// FROM users;
+
+//  User with lowest followers
+
+//  Using with GROUP BY (Very Important ⭐)
+
+//  Suppose we had a department-like column (example: category)
+
+// SELECT following, COUNT(*) 
+// FROM users
+// GROUP BY following;
+
+//  Groups users by following count
+
+// Using with ORDER BY
+// SELECT username, followers
+// FROM users
+// ORDER BY followers DESC
+// LIMIT 1;
+
+// Get user with highest followers (full row)
+
+//  Using with DISTINCT
+// SELECT COUNT(DISTINCT followers)
+// FROM users;
+
+//  Count unique follower values
+
+//  Key Points
+// Work on multiple rows → return single value
+// Ignore NULL values (except COUNT(*))
+// Commonly used with:
+// GROUP BY
+// HAVING
+
+
+//  Real-life Example (Instagram Style)
+// SELECT AVG(followers)
+// FROM users
+// WHERE followers > 1000;
+
+//  Average followers of popular users
+
+// Quick Revision
+// Function	Use
+// COUNT()	Count rows
+// SUM()	Total
+// AVG()	Average
+// MAX()	Highest
+// MIN()	Lowest
