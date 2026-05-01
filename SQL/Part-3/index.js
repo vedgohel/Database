@@ -92,3 +92,156 @@
 
 // SELECT username → only prints names
 // WHERE → filters which users to show
+
+
+
+
+
+
+
+// 1. Comparison Operators
+
+// Used to compare values.
+
+// =
+// SELECT username FROM users
+// WHERE username = 'ved_gohel';
+
+
+// != or <> (Not equal)
+// SELECT username FROM users
+// WHERE username != 'john_doe';
+
+
+
+//  > < >= <=
+// SELECT username FROM users
+// WHERE followers > 1000;
+
+
+// 2. Logical Operators
+
+// Used to combine conditions.
+
+//  AND
+// SELECT username FROM users
+// WHERE followers > 1000 AND following < 500;
+ 
+//  OR
+// SELECT username FROM users
+// WHERE username = 'ved_gohel' OR username = 'john_doe';
+
+
+//  NOT
+// SELECT username FROM users
+// WHERE NOT username = 'jane_smith';
+
+
+//  3. IN Operator
+
+// Match multiple values.
+
+// SELECT username FROM users
+// WHERE username IN ('ved_gohel', 'john_doe');
+
+
+//  NOT IN
+// SELECT username FROM users
+// WHERE username NOT IN ('jane_smith');
+
+
+// 4. BETWEEN Operator
+
+// Used for ranges.
+
+// SELECT username FROM users
+// WHERE followers BETWEEN 500 AND 2000;
+
+// Includes both 500 and 2000.
+
+// 5. LIKE Operator (Pattern Matching)
+
+
+//  Starts with
+// SELECT username FROM users
+// WHERE username LIKE 'v%';
+
+
+//  Ends with
+// SELECT username FROM users
+// WHERE username LIKE '%e';
+
+
+// Contains
+// SELECT username FROM users
+// WHERE username LIKE '%do%';
+
+
+// 6. IS NULL / IS NOT NULL
+//  Check NULL values
+// SELECT username FROM users
+// WHERE bio IS NULL;
+
+
+// Not NULL
+// SELECT username FROM users
+// WHERE bio IS NOT NULL;
+
+
+//  7. EXISTS Operator (Advanced)
+
+// Checks if subquery returns data.
+
+// SELECT username FROM users u
+// WHERE EXISTS (
+//     SELECT 1 FROM users WHERE followers > 3000
+// );
+
+//  Returns users if condition inside is true.
+
+//  8. ANY and ALL (Advanced)
+
+
+// ANY
+// SELECT username FROM users
+// WHERE followers > ANY (SELECT followers FROM users WHERE following > 500);
+
+//  Greater than at least one value
+
+//  ALL
+// SELECT username FROM users
+// WHERE followers > ALL (SELECT followers FROM users WHERE following > 500);
+
+//  Greater than all values
+
+
+
+
+//  Quick Revision Table
+// Operator	Use
+// =	Equal
+// !=, <>	Not equal
+// > < >= <=	Comparison
+// AND	Both conditions true
+// OR	Any condition true
+// NOT	Reverse condition
+// IN	Multiple values
+// BETWEEN	Range
+// LIKE	Pattern search
+// IS NULL	Check null
+// EXISTS	Subquery check
+// ANY, ALL	Advanced comparison
+
+
+
+
+//  Pro Tip (Exam + Interview)
+
+// Most important operators:
+
+// =, >, <
+// AND, OR
+// IN
+// BETWEEN
+// LIKE
+
