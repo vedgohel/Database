@@ -154,3 +154,64 @@
 // But actually FROM runs first 
 // WHERE comes before grouping
 // HAVING comes after grouping
+
+
+
+
+
+
+
+
+// UPDATE Table in SQL
+
+// The UPDATE statement is used to modify existing data in a table.
+
+//  Basic Syntax
+// UPDATE table_name
+// SET column1 = value1, column2 = value2
+// WHERE condition;
+
+//  WHERE is very important — otherwise all rows will be updated 
+
+//  Examples with your users table
+
+
+//  1. Update single user
+// UPDATE users
+// SET bio = 'MERN Stack Developer 
+// WHERE username = 'ved_gohel';
+
+//  2. Update multiple columns
+
+// UPDATE users
+// SET followers = 1500, following = 350
+// WHERE username = 'ved_gohel';
+
+//  3. Update using condition
+// UPDATE users
+// SET bio = 'Popular User 
+// WHERE followers > 2000;
+
+//  4. Without WHERE (Danger )
+// UPDATE users
+// SET bio = 'Hello';
+
+//  This will update ALL users 
+
+//  Check Updated Data
+// SELECT * FROM users;
+
+
+//  Key Points
+// UPDATE modifies existing records
+// Always use WHERE to target specific rows
+// Can update one or multiple columns
+
+
+// Real-life Example (Instagram Style)
+
+// Increase followers by 100:
+
+// UPDATE users
+// SET followers = followers + 100
+// WHERE username = 'ved_gohel';
