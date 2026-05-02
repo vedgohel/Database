@@ -78,3 +78,79 @@
 // FROM users
 // GROUP BY following
 // HAVING AVG(followers) > 1000;
+
+
+
+
+
+
+
+
+// General Order of Execution in SQL
+
+// When you write a query, it looks like this:
+
+// SELECT column
+// FROM table
+// WHERE condition
+// GROUP BY column
+// HAVING condition
+// ORDER BY column
+// LIMIT number;
+
+// But internally, SQL does NOT execute in this order 
+
+//  It follows a different logical execution order 
+
+//  Actual Execution Order
+// FROM → choose table
+// WHERE → filter rows
+// GROUP BY → make groups
+// HAVING → filter groups
+// SELECT → choose columns
+// ORDER BY → sort result
+// LIMIT → restrict rows
+
+
+//  Example with your users table
+
+// SELECT following, COUNT(*) AS total_users
+// FROM users
+// WHERE followers > 500
+// GROUP BY following
+// HAVING COUNT(*) > 1
+// ORDER BY total_users DESC
+// LIMIT 2;
+
+
+// Step-by-step execution
+
+//  SQL will process like this:
+
+// FROM users → take data
+// WHERE followers > 500 → filter users
+// GROUP BY following → create groups
+// HAVING COUNT(*) > 1 → keep valid groups
+// SELECT following, COUNT(*) → pick columns
+// ORDER BY total_users DESC → sort
+// LIMIT 2 → show only top 2
+
+
+//  Easy Memory Trick
+
+//  F W G H S O L
+
+// From
+// Where
+// Group By
+// Having
+// Select
+// Order By
+// Limit
+
+//  Important for Exams
+
+// Most students think SELECT runs first 
+// But actually FROM runs first 
+// WHERE comes before grouping
+// HAVING comes after grouping
