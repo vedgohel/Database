@@ -66,3 +66,86 @@
 
 
 
+
+// ALTER TABLE in SQL
+
+// The ALTER TABLE statement is used to modify the structure of an existing table.
+
+//  Basic Syntax
+// ALTER TABLE table_name
+// action;
+
+
+// Common Operations
+
+
+// 1. Add a New Column
+
+
+// ALTER TABLE users
+// ADD age INT;
+
+// Adds a new column age to the users table.
+
+// 2. Add Multiple Columns
+
+
+// ALTER TABLE users
+// ADD city VARCHAR(50),
+// ADD country VARCHAR(50);
+
+
+
+// 3. Modify Column (change datatype)
+
+// ALTER TABLE users
+// MODIFY age BIGINT;
+
+// Note: MODIFY is used in MySQL.
+
+// 4. Rename Column
+
+
+// ALTER TABLE users
+// RENAME COLUMN username TO user_name;
+
+// 5. Drop Column
+
+// ALTER TABLE users
+// DROP COLUMN age;
+
+// Removes the column permanently.
+
+// 6. Rename Table
+
+
+// ALTER TABLE users
+// RENAME TO instagram_users;
+
+// 7. Add Constraint (Example: UNIQUE)
+
+// ALTER TABLE users
+// ADD CONSTRAINT unique_email UNIQUE (email);
+
+// 8. Drop Constraint
+
+// ALTER TABLE users
+// DROP INDEX unique_email;
+
+// (MySQL uses DROP INDEX for removing UNIQUE)
+
+//  Key Points
+
+// Used to change table structure, not data
+// Can add, modify, rename, or delete columns
+// Changes are permanent
+
+// Syntax may slightly differ in different databases (MySQL, PostgreSQL, etc.)
+
+
+// Practical Example
+
+// ALTER TABLE users
+// ADD is_verified BOOLEAN DEFAULT FALSE;
+
+// Adds a column to track verified users.
