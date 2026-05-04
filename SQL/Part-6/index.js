@@ -81,3 +81,52 @@
 // Count users having followers > 1000
 
 
+// Practice 2 – SQL Queries (Intermediate)
+// Table: users
+
+// Columns:
+// user_id, username, full_name, email, followers, following, created_at
+
+//  Questions + Solutions
+
+
+// Q1. Show users having followers > 1000 and following < 500
+// SELECT username, followers, following
+// FROM users
+// WHERE followers > 1000 AND following < 500;
+// Q2. Find total followers of all users
+// SELECT SUM(followers) AS total_followers
+// FROM users;
+// Q3. Find maximum and minimum followers
+// SELECT MAX(followers) AS max_followers,
+//        MIN(followers) AS min_followers
+// FROM users;
+// Q4. Count users grouped by following
+// SELECT following, COUNT(*) AS total_users
+// FROM users
+// GROUP BY following;
+// Q5. Show groups having more than 1 user
+// SELECT following, COUNT(*) AS total_users
+// FROM users
+// GROUP BY following
+// HAVING COUNT(*) > 1;
+// Q6. Show average followers for each following group
+// SELECT following, AVG(followers) AS avg_followers
+// FROM users
+// GROUP BY following;
+// Q7. Show top 3 users with highest followers
+// SELECT username, followers
+// FROM users
+// ORDER BY followers DESC
+// LIMIT 3;
+// Q8. Show users created recently (latest first)
+// SELECT username, created_at
+// FROM users
+// ORDER BY created_at DESC;
+// Q9. Update followers for a specific user
+// UPDATE users
+// SET followers = followers + 500
+// WHERE username = 'ved_gohel';
+// Q10. Delete users with very low followers (< 100)
+// DELETE FROM users
+// WHERE followers < 100;
