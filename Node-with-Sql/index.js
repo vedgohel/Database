@@ -63,3 +63,15 @@ connection.query(createTableQuery, (err, result) => {
 // 1. schema.sql
 // 2. cmd in vs studio using username and password mysql'
 // 3. using workbench 
+
+
+// video 3 
+
+// Routing in node js  with sql
+
+// Rest API => GET, POST, PUT, DELETE
+// / => home page => GET => Get request  show no of users in database
+// /users => GET => Get request  show all users in database ejs (email , username , id)
+// /users => POST => create new user in database
+// /user/id => patch => update user details in database
+// /user/id => delete => delete user from database
