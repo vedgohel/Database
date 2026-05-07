@@ -135,3 +135,95 @@
 //   });
 
 
+
+// update mongoose
+
+
+
+
+// const mongoose = require("mongoose");
+
+// // Connect MongoDB
+// mongoose.connect("mongodb://localhost:27017/test")
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch((err) => console.log(err));
+
+
+// // ================= SCHEMA =================
+
+// const userSchema = new mongoose.Schema({
+//   name: String,
+//   age: Number,
+//   email: String,
+//   isActive: Boolean
+// });
+
+
+// // ================= MODEL =================
+
+// const User = mongoose.model("User", userSchema);
+
+
+// // ================= UPDATE ONE =================
+
+// // Update single document
+// User.updateOne(
+//   { name: "Ved" }, // find condition
+//   { age: 21 }      // updated value
+// )
+// .then((res) => {
+//   console.log("Update One:");
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+// // ================= UPDATE MANY =================
+
+// // Update multiple documents
+// User.updateMany(
+//   { isActive: true },
+//   { isActive: false }
+// )
+// .then((res) => {
+//   console.log("Update Many:");
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+// // ================= FIND BY ID AND UPDATE =================
+
+// // Replace with real MongoDB _id
+// User.findByIdAndUpdate(
+//   "665b1a2c4f1d2e1234567890",
+//   { age: 30 },
+//   { new: true } // returns updated document
+// )
+// .then((res) => {
+//   console.log("Updated User:");
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+// // ================= FIND ONE AND UPDATE =================
+
+// User.findOneAndUpdate(
+//   { name: "Rahul" },
+//   { age: 26 },
+//   { new: true }
+// )
+// .then((res) => {
+//   console.log("Find One And Update:");
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
