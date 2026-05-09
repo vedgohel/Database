@@ -185,3 +185,178 @@
 // Improves reliability of systems
 // Makes APIs self-documenting
 // Helps debugging early
+
+
+// In Mongoose, schema type options are additional settings you can apply to schema fields to control
+//  validation, defaults, formatting, and behavior.
+
+//  Basic Syntax
+
+
+// const userSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: true,
+//     trim: true
+//   }
+// });
+
+// Here:
+
+// type → data type
+// required, trim → schema type options
+
+
+//  Common Schema Type Options
+
+// 1. required
+
+// Makes field mandatory.
+
+// name: {
+//   type: String,
+//   required: true
+// }
+// 2. default
+
+// Sets default value.
+
+// isActive: {
+//   type: Boolean,
+//   default: true
+// }
+// 3. unique
+
+// Ensures unique values.
+
+// email: {
+//   type: String,
+//   unique: true
+// }
+
+
+// 4. trim
+
+// Removes spaces from beginning and end.
+
+// name: {
+//   type: String,
+//   trim: true
+// }
+
+// Input:
+
+// "   Ved   "
+
+// Stored:
+
+// "Ved"
+
+
+
+// 5. lowercase
+
+// Converts string to lowercase.
+
+// email: {
+//   type: String,
+//   lowercase: true
+// }
+
+
+
+// 6. uppercase
+
+// Converts string to uppercase.
+
+// code: {
+//   type: String,
+//   uppercase: true
+// }
+
+
+
+// 7. minlength / maxlength
+// password: {
+//   type: String,
+//   minlength: 6,
+//   maxlength: 20
+// }
+
+
+// 8. min / max
+
+// For numbers.
+
+// age: {
+//   type: Number,
+//   min: 18,
+//   max: 60
+// }
+
+
+// 9. enum
+
+// Allows only specific values.
+
+// role: {
+//   type: String,
+//   enum: ["user", "admin", "manager"]
+// }
+
+
+
+// 10. match
+
+// Uses regular expressions.
+
+// email: {
+//   type: String,
+//   match: /.+\@.+\..+/
+// }
+
+
+// Full Example
+
+// const mongoose = require("mongoose");
+
+// const userSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: true,
+//     trim: true
+//   },
+
+//   email: {
+//     type: String,
+//     required: true,
+//     unique: true,
+//     lowercase: true
+//   },
+
+//   age: {
+//     type: Number,
+//     min: 18,
+//     max: 60
+//   },
+
+//   role: {
+//     type: String,
+//     enum: ["user", "admin"],
+//     default: "user"
+//   }
+// });
+
+// module.exports = mongoose.model("User", userSchema);
+
+
+// Common Mongoose Schema Types
+// Type	Example
+// String	"Ved"
+// Number	25
+// Boolean	true
+// Date	new Date()
+// Array	["JS", "React"]
+// ObjectId	MongoDB reference
+// Mixed	Any type
+// Buffer	Binary data
