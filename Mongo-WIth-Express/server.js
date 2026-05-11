@@ -83,3 +83,5 @@ app.listen(3000, () => {
 
 
 // ved gohel
+
+// This code sets up a simple Express server that connects to a MongoDB database using Mongoose. It defines a User schema and model, and provides routes for creating, retrieving, updating, and deleting users. The server listens on port 3000.
